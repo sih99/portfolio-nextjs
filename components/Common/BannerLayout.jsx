@@ -5,8 +5,8 @@ const BannerLayout = ({ children }) => {
       //
       style={{
         background: "url(images/background2.jpeg)",
-        backgroundRepeat: "no-repeat",
-        backgroundSize: "cover",
+        // backgroundRepeat: "no-repeat",
+        // backgroundSize: "cover",
       }}
     >
       <div
