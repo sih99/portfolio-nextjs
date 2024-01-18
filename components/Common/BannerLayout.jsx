@@ -9,6 +9,9 @@ const BannerLayout = ({ children }) => {
         // backgroundSize: "cover",
       }}
     >
+      <div className="w-48 h-52 relative hidden md:block">
+        <img className="absolute top-8 w-full h-full" src="images/hongsungin3.png" alt="emoji" />
+      </div>
       <div
         className="absolute inset-0 z-20 flex flex-col items-center justify-center w-full h-full"
         // bg-gradient-to-t from-MidNightBlack

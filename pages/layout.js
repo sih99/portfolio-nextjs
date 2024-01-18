@@ -46,7 +46,7 @@ export default function Layout({ children }) {
         )}
 
         {/* middle of screen */}
-        <div className="w-full h-auto lg:w-9/12 shadow-2xl relative overflow-auto overflow-x-hidden no-scrollbar">
+        <div className="w-full h-auto lg:w-9/12 shadow-2xl relative overflow-auto overflow-x-hidden no-scrollbar rounded-t-[8px]">
           {children}
         </div>
 
