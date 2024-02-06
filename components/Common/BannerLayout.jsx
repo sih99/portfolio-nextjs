@@ -4,17 +4,17 @@ const BannerLayout = ({ children }) => {
       className="relative  w-full h-80 bg-fixed z-10"
       //
       style={{
-        background: "url(images/background2.jpeg)",
+        background: "url(images/background.jpeg)",
         // backgroundRepeat: "no-repeat",
-        // backgroundSize: "cover",
+        backgroundSize: "cover",
       }}
     >
-      <div className="w-48 h-52 relative hidden md:block">
+      {/* <div className="w-48 h-52 relative hidden md:block">
         <img className="absolute top-8 w-full h-full" src="images/hongsungin3.png" alt="emoji" />
-      </div>
+      </div> */}
       <div
         className="absolute inset-0 z-20 flex flex-col items-center justify-center w-full h-full"
-        // bg-gradient-to-t from-MidNightBlack
+        //bg-gradient-to-t from-MidNightBlack
       >
         <div
           className="bg-Black/5 w-full h-full"

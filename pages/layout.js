@@ -33,30 +33,20 @@ export default function Layout({ children }) {
         <div
           className={`w-64 h-screen left-0 lg:rounded-xl -top-10 lg:top-0 lg:left-0 lg:h-full overflow-hidden shadow-2xl z-50 lg:flex flex-col  lg:relative ${
             intro ? "flex absolute" : "hidden"
-          }`}
+          } bg-[#CEAB93]/70`}
         >
           <Intro isOpen={intro} setIsOpen={setIntro} />
         </div>
         {/* overlay */}
-        {intro && (
-          <div
-            onClick={(e) => setIntro(false)}
-            className="fixed top-0 left-0  w-full h-full bg-black/50 backdrop-blur-[2px] z-40"
-          ></div>
-        )}
+        {intro && <div onClick={(e) => setIntro(false)} className="fixed top-0 left-0  w-full h-full bg-black/50 backdrop-blur-[2px] z-40"></div>}
 
         {/* middle of screen */}
-        <div className="w-full h-auto lg:w-9/12 shadow-2xl relative overflow-auto overflow-x-hidden no-scrollbar rounded-t-[8px]">
-          {children}
-        </div>
+        <div className="w-full h-auto lg:w-9/12 shadow-2xl relative overflow-auto overflow-x-hidden no-scrollbar rounded-t-[8px]">{children}</div>
 
         {/* right side */}
         {/* right side */}
         <div className={`hidden lg:block absolute lg:w-20 lg:relative shadow-2xl rounded-xl overflow-hidden`}>
-          <div
-            onClick={(e) => setIsOpen(!isOpen)}
-            className="bg-MidNightBlack text-Green hidden lg:flex items-center h-16 justify-center text-2xl "
-          >
+          <div onClick={(e) => setIsOpen(!isOpen)} className="bg-MidNightBlack text-Green hidden lg:flex items-center h-16 justify-center text-2xl ">
             <span className="icon border-2 border-Green p-2 rounded-xl">
               {" "}
               <FaBars />
