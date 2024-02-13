@@ -14,7 +14,7 @@ const Intro = () => {
   return (
     <>
       {/* fixed at top */}
-      <div className="headerr z-50 absolute  backdrop-blur-sm inset-y-0 h-40 top-0 flex items-center justify-center w-full flex-col px-4 gap-y-2">
+      <div className="headerr z-50 absolute bg-[#E3E1D9] inset-y-0 h-40 top-0 flex items-center justify-center w-full flex-col px-4 gap-y-2">
         <Image className="w-[100px] h-[100px] rounded-full" src={Yuta} alt="profile picture" />
         <div className="flex flex-col items-center justify-center">
           <span className="text-Gray900 text-base font-bold break-normal">{NAME}</span>
@@ -33,11 +33,11 @@ const Intro = () => {
       </div>
 
       {/* fixed at bottom */}
-      <div className="footer absolute flex justify-center space-x-6 text-xl items-center bottom-0 z-50 h-10 w-full bg-MidNightBlack text-Snow">
+      <div className="footer absolute flex justify-center space-x-6 text-xl items-center bottom-0 z-50 h-10 w-full bg-[#B4B4B8] text-Snow">
         <Link href={SOCIAL_LINKS.GITHUB} target="_blank" rel="noreferrer" className="">
           <FaGithub />
         </Link>
-        <Link href={SOCIAL_LINKS.TWITTER} target="_blank" rel="noreferrer" className="">
+        {/* <Link href={SOCIAL_LINKS.TWITTER} target="_blank" rel="noreferrer" className="">
           <FaTwitter />
         </Link>
         <Link href={SOCIAL_LINKS.FACEBOOK} target="_blank" rel="noreferrer" className="">
@@ -45,7 +45,7 @@ const Intro = () => {
         </Link>
         <Link href={SOCIAL_LINKS.LINKEDIN} target="_blank" rel="noreferrer" className="">
           <FaLinkedin />
-        </Link>
+        </Link> */}
       </div>
     </>
   );

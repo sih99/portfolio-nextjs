@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   const [intro, setIntro] = useState(false);
 
   return (
-    <div className={`h-screen lg:p-[0.8rem] flex flex-col select-none font-circular`}>
+    <div className={`h-screen lg:p-[0.8rem] flex flex-col select-none font-circular bg-[#F2EFE5]`}>
       <div className="lg:hidden">
         <div className="bg-black text-LightGray w-full h-10 flex items-center justify-between px-2 lg:hidden relative">
           <div className="icon flex items-center gap-x-2" onClick={(e) => setIntro(!intro)}>
@@ -33,7 +33,7 @@ export default function Layout({ children }) {
         <div
           className={`w-64 h-screen left-0 lg:rounded-xl -top-10 lg:top-0 lg:left-0 lg:h-full overflow-hidden shadow-2xl z-50 lg:flex flex-col  lg:relative ${
             intro ? "flex absolute" : "hidden"
-          } bg-[#CEAB93]/70`}
+          } bg-[#E3E1D9]`}
         >
           <Intro isOpen={intro} setIsOpen={setIntro} />
         </div>
