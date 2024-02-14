@@ -1,12 +1,13 @@
 const BannerLayout = ({ children }) => {
   return (
     <div
-      className="relative  w-full h-80 bg-fixed z-10"
+      className="relative  w-full h-[260px] bg-fixed z-10"
       //
       style={{
         background: "url(images/background.jpeg)",
         // backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
+        backgroundPosition: "center",
       }}
     >
       {/* <div className="w-48 h-52 relative hidden md:block">
