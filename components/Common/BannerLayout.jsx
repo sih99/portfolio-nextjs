@@ -8,6 +8,8 @@ const BannerLayout = ({ children }) => {
         // backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",
+        // backgroundAttachment: "fixed",
+        // backgroundBlendMode: "overlay",
       }}
     >
       {/* <div className="w-48 h-52 relative hidden md:block">
