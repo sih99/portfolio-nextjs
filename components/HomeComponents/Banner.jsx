@@ -9,7 +9,7 @@ const Banner = () => {
         className="absolute inset-0 z-20 flex flex-col items-center py-6 justify-center w-full h-full"
         //bg-gradient-to-t from-MidNightBlack
       >
-        <div className="bg-LightGray/10 w-[95%] h-[90%] px-4 py-2 rounded-xl overflow-hidden flex md:block">
+        <div className="bg-LightGray/10 w-[95%] h-[90%] px-4 py-2 rounded-xl overflow-hidden mt-[30px]">
           <div className="flex items-center md:items-center md:justify-around">
             <div className="flex flex-col gap-[8px] w-full md:items-center">
               <div className="">
