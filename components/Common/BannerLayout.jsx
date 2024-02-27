@@ -4,7 +4,7 @@ const BannerLayout = ({ children }) => {
       className="relative  w-full h-[260px] bg-fixed z-10"
       //
       style={{
-        background: "url(images/background.jpeg)",
+        background: "url(images/background4.jpeg)",
         // backgroundRepeat: "no-repeat",
         backgroundSize: "cover",
         backgroundPosition: "center",

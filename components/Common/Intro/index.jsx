@@ -14,11 +14,11 @@ const Intro = () => {
   return (
     <>
       {/* fixed at top */}
-      <div className="headerr z-50 absolute bg-[#E3E1D9] inset-y-0 h-40 top-0 flex items-center justify-center w-full flex-col px-4 gap-y-2">
+      <div className="headerr z-50 absolute bg-[#144272] inset-y-0 h-40 top-0 flex items-center justify-center w-full flex-col px-4 gap-y-2">
         <Image className="w-[100px] h-[100px] rounded-full" src={Yuta} alt="profile picture" />
         <div className="flex flex-col items-center justify-center">
-          <span className="text-Gray900 text-base font-bold break-normal">{NAME}</span>
-          <span className="text-sm text-Gray700 text-center">{DESIGNATION}</span>
+          <span className="text-Snow text-base font-bold break-normal">{NAME}</span>
+          <span className="text-sm text-Snow text-center">{DESIGNATION}</span>
         </div>
       </div>
 
@@ -33,7 +33,7 @@ const Intro = () => {
       </div>
 
       {/* fixed at bottom */}
-      <div className="footer absolute flex justify-center space-x-6 text-xl items-center bottom-0 z-50 h-10 w-full bg-[#B4B4B8] text-Snow">
+      <div className="footer absolute flex justify-center space-x-6 text-xl items-center bottom-0 z-50 h-10 w-full bg-[#144272] text-Snow">
         <Link href={SOCIAL_LINKS.GITHUB} target="_blank" rel="noreferrer" className="">
           <FaGithub />
         </Link>
