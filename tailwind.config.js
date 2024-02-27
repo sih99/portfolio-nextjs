@@ -19,6 +19,8 @@ module.exports = {
         Gray900: "#222222",
         Gray700: "#616161",
         Gray100: "#f5f5f5",
+        Blue: "#2d8eff",
+        Navy: "#144272",
       },
       fontFamily: {
         "cascadia-normal": ["cascadia-normal"],
