@@ -1,4 +1,5 @@
 import { ChevronDown, MailOutline, PhonePortraitOutline, CalendarOutline, LocationOutline, LogoFacebook, LogoGithub } from "react-ionicons";
+import Image from "next/image";
 import classNames from "classnames/bind";
 import styles from "./index.module.scss";
 
@@ -14,86 +15,92 @@ const Sidebar = ({ horizontal, size }: SidebarProps) => {
     <aside className={`${cx("sidebar", "active")} ${horizontal && "horizontal"} ${size}`} data-sidebar>
       <div className={`${cx("sidebar-info")}`}>
         <figure className={`${cx("avatar-box")}`}>
-          <img src="images/yuta-okkotsu.jpeg" />
+          <Image src="/images/yuta-okkotsu.jpeg" alt="" className={`${cx("image")}`} width={150} height={150} />
         </figure>
 
         <div className={`${cx("info-content")}`}>
           <h1 className={`${cx("name")}`} title="홍성인">
             홍성인
           </h1>
-
           <p className={`${cx("title")}`}>Web developer</p>
         </div>
 
-        <button className={`${cx("info_more-btn")}`} data-sidebar-btn>
+        {/* <button className={`${cx("info_more-btn")}`} data-sidebar-btn>
           <span>Show Contacts</span>
           <ChevronDown />
-        </button>
+        </button> */}
       </div>
 
       <div className={`${cx("sidebar-info_more")}`}>
         <div className={`${cx("separator")}`}></div>
-
-        <ul className="contacts-list">
-          <li className="contact-item">
-            <div className="icon-box">
-              <MailOutline />
+        <ul className={`${cx("contacts-list")}`}>
+          <li className={`${cx("contact-item")}`}>
+            <div className={`${cx("icon-box")}`}>
+              <MailOutline color={"var(--silver)"} width={"18px"} height={"18px"} />
             </div>
 
-            <div className="contact-info">
-              <p className="contact-title">Email</p>
+            <div className={`${cx("contact-info")}`}>
+              <p className={`${cx("contact-title")}`}>Email</p>
 
-              <a href="mailto:richard@example.com" className="contact-link">
-                richard@example.com
+              <a href="mailto:hongsungin92@gmail.com" className={`${cx("contact-link")}`}>
+                hongsungin92@gmail.com
               </a>
             </div>
           </li>
 
-          <li className="contact-item">
-            <div className="icon-box">
-              <PhonePortraitOutline />
+          <li className={`${cx("contact-item")}`}>
+            <div className={`${cx("icon-box")}`}>
+              <PhonePortraitOutline color={"var(--silver)"} width={"18px"} height={"18px"} />
             </div>
 
-            <div className="contact-info">
-              <p className="contact-title">Phone</p>
+            <div className={`${cx("contact-info")}`}>
+              <p className={`${cx("contact-title")}`}>Phone</p>
 
-              <a href="tel:+12133522795" className="contact-link">
-                +1 (213) 352-2795
+              <a href="tel:01025074232" className={`${cx("contact-link")}`}>
+                010-2507-4232
               </a>
             </div>
           </li>
 
-          <li className="contact-item">
-            <div className="icon-box">
-              <CalendarOutline />
+          <li className={`${cx("contact-item")}`}>
+            <div className={`${cx("icon-box")}`}>
+              <CalendarOutline color={"var(--silver)"} width={"18px"} height={"18px"} />
             </div>
 
-            <div className="contact-info">
-              <p className="contact-title">Birthday</p>
+            <div className={`${cx("contact-info")}`}>
+              <p className={`${cx("contact-title")}`}>Birthday</p>
 
-              <time dateTime="1982-06-23">June 23, 1982</time>
+              <time dateTime="1992-09-09" className={`${cx("contact-link")}`}>
+                September 9, 1992
+              </time>
             </div>
           </li>
 
-          <li className="contact-item">
-            <div className="icon-box">
-              <LocationOutline />
+          <li className={`${cx("contact-item")}`}>
+            <div className={`${cx("icon-box")}`}>
+              <LocationOutline color={"var(--silver)"} width={"18px"} height={"18px"} />
             </div>
 
-            <div className="contact-info">
-              <p className="contact-title">Location</p>
+            <div className={`${cx("contact-info")}`}>
+              <p className={`${cx("contact-title")}`}>Location</p>
 
-              <address>Sacramento, California, USA</address>
+              <address
+                className={`${cx("contact-link")}`}
+                style={{
+                  fontStyle: "normal",
+                }}
+              >
+                서울 구로구 구로동
+              </address>
             </div>
           </li>
         </ul>
 
-        <div className="separator"></div>
-
-        <ul className="social-list">
-          <li className="social-item">
-            <a href="#" className="social-link">
-              <LogoGithub />
+        <div className={cx("separator")}></div>
+        <ul className={cx("social-list")}>
+          <li className={cx("social-item")}>
+            <a href="https://github.com/sih99" target="_blank" className={cx("social-link")} rel="noreferrer">
+              <LogoGithub width={"18px"} height={"18px"} color={"currentcolor"} />
             </a>
           </li>
           {/* 
