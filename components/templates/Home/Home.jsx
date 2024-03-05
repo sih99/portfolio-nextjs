@@ -1,22 +1,18 @@
 import Banner from "../../HomeComponents/Banner";
 import { CommercialProjects, Layout } from "../../organisms";
 import { Sidebar } from "@/components/organisms";
-import "./index.module.css";
+import classNames from "classnames/bind";
+import styles from "./index.module.scss";
+
+const cx = classNames.bind(styles);
 
 const Home = () => {
   return (
-    // <Layout>
-    //   <div className="Home-Page">
-    //     <Banner />
-    //     <CommercialProjects />
-    //     {/* <MyExpertise />
-    //   <Recommendations />
-    //   <ClientReviews /> */}
-    //     {/* <Footer /> */}
-    //   </div>
-    // </Layout>
-    <main className="home">
+    <main className={cx("home")}>
       <Sidebar />
+      <div className={cx("main-content")}>
+        <article className={cx("article", "active")}></article>
+      </div>
     </main>
   );
 };
