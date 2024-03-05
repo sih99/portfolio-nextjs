@@ -4,11 +4,7 @@
     "target": "ES5",
     "outDir": "./dist",
     "moduleResolution": "Node",
-    "lib": [
-      "ES2015",
-      "DOM",
-      "DOM.Iterable"
-    ],
+    "lib": ["ES2015", "DOM", "DOM.Iterable"],
     "resolveJsonModule": true,
     "esModuleInterop": true,
     "jsx": "preserve",
@@ -18,16 +14,11 @@
     "noEmit": true,
     "incremental": true,
     "module": "esnext",
-    "isolatedModules": true
+    "isolatedModules": true,
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
-  "include": [
-    "**/*.ts",
-    "**/*.tsx",
-    "**/*.js",
-    "**/*.jsx"
-  ],
-  "exclude": [
-    "node_modules",
-    "dist"
-  ]
+  "include": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
+  "exclude": ["node_modules", "dist"]
 }
