@@ -5,6 +5,10 @@ import { Sidebar } from "@/components/organisms";
 import classNames from "classnames/bind";
 import styles from "./index.module.scss";
 import About from "./About";
+import Resume from "./Resume";
+import Portfolio from "./Portfolio";
+import Blog from "./Blog";
+import Contact from "./Contact";
 
 const cx = classNames.bind(styles);
 
@@ -73,7 +77,13 @@ const Home = () => {
             </li>
           </ul>
         </nav>
-        <article className={cx("article")}>{nav === "about" && <About />}</article>
+        <article className={cx("article")}>
+          {nav === "about" && <About />}
+          {nav === "portfolio" && <Portfolio />}
+          {nav === "resume" && <Resume />}
+          {nav === "blog" && <Blog />}
+          {nav === "contact" && <Contact />}
+        </article>
       </div>
     </main>
   );
