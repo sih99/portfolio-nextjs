@@ -34,13 +34,7 @@ const Portfolio = ({ className }: PortfolioProps) => {
             <button className={`${cx({ active: filter === "all" })}`} data-filter-btn>
               Web design
             </button>
-          </li>
-
-          <li className={`${cx("filter-item")}`}>
-            <button className={`${cx({ active: filter === "all" })}`} data-filter-btn>
-              Applications
-            </button>
-          </li> */}
+          </li>*/}
 
           <li className={`${cx("filter-item")}`}>
             <button
@@ -51,6 +45,18 @@ const Portfolio = ({ className }: PortfolioProps) => {
               }}
             >
               Web development
+            </button>
+          </li>
+
+          <li className={`${cx("filter-item")}`}>
+            <button
+              className={`${cx({ active: filter === "mobile-apps" })}`}
+              data-filter-btn
+              onClick={() => {
+                setFilter("mobile-apps");
+              }}
+            >
+              Mobile Apps
             </button>
           </li>
         </ul>
