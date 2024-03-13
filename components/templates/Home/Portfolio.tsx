@@ -1,4 +1,5 @@
-import { useState } from "react";
+/* eslint-disable @next/next/no-img-element */
+import { useState, useEffect, useMemo } from "react";
 import Image from "next/image";
 import classNames from "classnames/bind";
 import styles from "./index.module.scss";
@@ -7,12 +8,57 @@ import { COLOR_PALETTES } from "@/constants";
 
 const cx = classNames.bind(styles);
 
+type Item = {
+  name: string;
+  category: string;
+  techs: string[];
+  image: string;
+  company: string;
+  companyUrl?: string;
+};
+
 export type PortfolioProps = {
   className?: string;
 };
 
 const Portfolio = ({ className }: PortfolioProps) => {
   const [filter, setFilter] = useState<string>("all");
+
+  const totalItems: Item[] = useMemo(() => {
+    return [
+      {
+        name: "레터웍스",
+        category: "web-development",
+        techs: ["Next.js", "ReactJS", "Typescript", "Tailwind CSS", "MongoDB", "AWS"],
+        image: "/images/letrworks.png",
+        company: "Twigfarm",
+        companyUrl: "https://www.twigfarm.net/",
+      },
+      {
+        name: "지콘스튜디오",
+        category: "web-development",
+        techs: ["MeteorJS", "ReactJS", "MongoDB", "AWS", "Material-UI"],
+        image: "/images/gconstudio.png",
+        company: "Twigfarm",
+        companyUrl: "https://www.twigfarm.net/",
+      },
+    ];
+  }, []);
+
+  const [items, setItems] = useState<Item[]>(totalItems);
+
+  const categoryLabels = {
+    "web-development": "Web development",
+    "mobile-apps": "Mobile Apps",
+  };
+
+  useEffect(() => {
+    if (filter === "all") {
+      setItems(totalItems);
+    } else {
+      setItems(totalItems.filter((item) => item.category === filter));
+    }
+  }, [filter, totalItems]);
 
   return (
     <div className={`${className} flex flex-col ${cx("fade")}`}>
@@ -64,48 +110,54 @@ const Portfolio = ({ className }: PortfolioProps) => {
           </li>
         </ul>
         <ul className={`${cx("project-list")}`}>
-          <li className={`${cx("project-item")}`} data-filter-item data-category="web development">
-            <a href="#">
-              <figure className={`${cx("project-img")}`}>
-                {/* <div className="project-item-icon-box">
-                  <ion-icon name="eye-outline"></ion-icon>
-                </div> */}
+          {items.map((item, i) => {
+            const { name, category, company, techs, image, companyUrl } = item;
+            return (
+              <li className={`${cx("project-item")}`} key={i}>
+                <a href="#">
+                  <figure className={`${cx("project-img")}`}>
+                    {/* <div className="project-item-icon-box">
+      <ion-icon name="eye-outline"></ion-icon>
+    </div> */}
 
-                <Image src="/images/gconstudio.png" alt="gconstudio" loading="lazy" width={2000} height={1247} />
-              </figure>
-            </a>
+                    <img src={image} alt={name} />
+                  </figure>
+                </a>
 
-            <div className="flex flex-col ml-[10px] gap-[6px]">
-              <div className="flex flex-col gap-[3px]">
-                <h3 className={`${cx("project-title")}`}>
-                  지콘스튜디오{" "}
-                  <a className={`${cx("project-company")}`} href="https://www.twigfarm.net/" target="_blank" rel="noreferrer">
-                    Twigfarm
-                  </a>
-                </h3>
-                <p className={`${cx("project-category")}`}>Web development</p>
-              </div>
-              <div className="flex gap-[3px] flex-wrap ">
-                {["ReactJS", "MongoDB", "AWS", "Material-UI", "MeteorJS"].map((tech, i) => {
-                  const colorIndex = i % 5;
+                <div className="flex flex-col ml-[10px] gap-[6px]">
+                  <div className="flex flex-col gap-[3px]">
+                    <h3 className={`${cx("project-title")}`}>
+                      {name}{" "}
+                      <a className={`${cx("project-company")}`} href={companyUrl || ""} target="_blank" rel="noreferrer">
+                        {company}
+                      </a>
+                    </h3>
+                    <p className={`${cx("project-category")}`}>{categoryLabels[category]}</p>
+                  </div>
+                  <div className="flex gap-[3px] flex-wrap ">
+                    {techs.map((tech, i) => {
+                      const colorIndex = i % 3;
 
-                  return (
-                    <Tag
-                      text={tech}
-                      key={i}
-                      color={
-                        (colorIndex == 0 && "#EEF5FF") ||
-                        (colorIndex === 1 && "#F0DBAF") ||
-                        (colorIndex === 2 && "#86B6F6") ||
-                        (colorIndex === 3 && "#7ED7C1") ||
-                        (colorIndex === 4 && "#B4D4FF")
-                      }
-                    />
-                  );
-                })}
-              </div>
-            </div>
-          </li>
+                      return (
+                        <Tag
+                          text={tech}
+                          key={i}
+                          color={
+                            (colorIndex == 0 && "#EEF5FF") ||
+                            // (colorIndex === 1 && "#F0DBAF") ||
+                            (colorIndex === 2 && "#86B6F6") ||
+                            // (colorIndex === 3 && "#7ED7C1") ||
+                            // (colorIndex === 4 && "#FFE6E6") ||
+                            (colorIndex === 1 && "#B4D4FF")
+                          }
+                        />
+                      );
+                    })}
+                  </div>
+                </div>
+              </li>
+            );
+          })}
         </ul>
       </section>
     </div>
