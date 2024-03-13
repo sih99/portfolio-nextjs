@@ -64,3 +64,25 @@ export const SOCIAL_LINKS = {
   // TWITTER: "https://twitter.com/iosamajavaid",
   // FACEBOOK: "https://www.facebook.com/iosamajavaid",
 };
+
+export const COLOR_PALETTES = [
+  "#f44336",
+  "#ffeb3b",
+  "#03a9f4",
+  "#4caf50",
+  "#ff9800",
+  "#3f51b5",
+  "#e91e63",
+  "#ffc107",
+  "#8bc34a",
+  "#cddc39",
+  "#2196f3",
+  "#673ab7",
+  "#009688",
+  "#ff5722",
+  "#795548",
+  "#9e9e9e",
+  "#607d8b",
+  "#00bcd4",
+  "#9c27b0",
+];

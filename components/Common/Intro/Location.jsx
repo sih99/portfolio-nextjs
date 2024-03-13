@@ -1,4 +1,4 @@
-import { DETAILS } from "../../../constants/constants";
+import { DETAILS } from "../../../constants/";
 import { getObjectKeys } from "../../../utils/utils";
 
 const Location = () => {

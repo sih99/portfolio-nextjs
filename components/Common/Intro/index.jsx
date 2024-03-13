@@ -7,7 +7,7 @@ import Location from "./Location";
 import Tools from "./Tools";
 import Skills from "./Skills";
 import Image from "next/image";
-import { NAME, DESIGNATION, SOCIAL_LINKS } from "../../../constants/constants";
+import { NAME, DESIGNATION, SOCIAL_LINKS } from "../../../constants/";
 import Yuta from "../../../public/images/yuta-okkotsu.jpeg";
 
 const Intro = () => {

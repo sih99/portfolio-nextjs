@@ -1,5 +1,5 @@
 import React from "react";
-import { CONTACTS } from "../../../constants/constants";
+import { CONTACTS } from "../../../constants/";
 import Link from "next/link";
 
 const Contact = () => {

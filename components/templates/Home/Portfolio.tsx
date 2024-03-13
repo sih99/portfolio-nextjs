@@ -2,6 +2,8 @@ import { useState } from "react";
 import Image from "next/image";
 import classNames from "classnames/bind";
 import styles from "./index.module.scss";
+import { Tag } from "@/components/atoms";
+import { COLOR_PALETTES } from "@/constants";
 
 const cx = classNames.bind(styles);
 
@@ -71,13 +73,38 @@ const Portfolio = ({ className }: PortfolioProps) => {
 
                 <Image src="/images/gconstudio.png" alt="gconstudio" loading="lazy" width={2000} height={1247} />
               </figure>
-
-              <h3 className="project-title">지콘스튜디오</h3>
-              <h3 className="project-title">Twigfarm</h3>
-              <h3 className="project-title">ReactJS MongoDB AWS Material-UI MeteorJS</h3>
-
-              <p className="project-category">Web development</p>
             </a>
+
+            <div className="flex flex-col ml-[10px] gap-[6px]">
+              <div className="flex flex-col gap-[3px]">
+                <h3 className={`${cx("project-title")}`}>
+                  지콘스튜디오{" "}
+                  <a className={`${cx("project-company")}`} href="https://www.twigfarm.net/" target="_blank" rel="noreferrer">
+                    Twigfarm
+                  </a>
+                </h3>
+                <p className={`${cx("project-category")}`}>Web development</p>
+              </div>
+              <div className="flex gap-[3px] flex-wrap ">
+                {["ReactJS", "MongoDB", "AWS", "Material-UI", "MeteorJS"].map((tech, i) => {
+                  const colorIndex = i % 5;
+
+                  return (
+                    <Tag
+                      text={tech}
+                      key={i}
+                      color={
+                        (colorIndex == 0 && "#EEF5FF") ||
+                        (colorIndex === 1 && "#F0DBAF") ||
+                        (colorIndex === 2 && "#86B6F6") ||
+                        (colorIndex === 3 && "#7ED7C1") ||
+                        (colorIndex === 4 && "#B4D4FF")
+                      }
+                    />
+                  );
+                })}
+              </div>
+            </div>
           </li>
         </ul>
       </section>
