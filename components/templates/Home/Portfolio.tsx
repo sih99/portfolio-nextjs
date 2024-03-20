@@ -123,10 +123,7 @@ const Portfolio = ({ className }: PortfolioProps) => {
               <li className={`${cx("project-item")}`} key={i}>
                 <a href="#">
                   <figure className={`${cx("project-img")}`}>
-                    {/* <div className="project-item-icon-box">
-      <ion-icon name="eye-outline"></ion-icon>
-    </div> */}
-
+                    <div className={`${cx("project-item-icon-box")}`}>{/* <ion-icon name="eye-outline"></ion-icon> */}</div>
                     <img src={image} alt={name} />
                   </figure>
                 </a>

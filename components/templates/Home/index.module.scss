@@ -137,6 +137,25 @@
   background: hsla(0, 0%, 0%, 0.5);
 }
 
+.project-item-icon-box {
+  --scale: 0.8;
+  background: var(--jet);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(var(--scale));
+  padding: 18px;
+  border-radius: 12px;
+  opacity: 0;
+  z-index: 1;
+  transition: var(--transition-1);
+}
+
+.project-item > a:hover .project-item-icon-box {
+  --scale: 1;
+  opacity: 1;
+}
+
 .project-img img {
   width: 100%;
   height: 100%;
