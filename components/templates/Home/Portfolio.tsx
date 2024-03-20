@@ -42,6 +42,13 @@ const Portfolio = ({ className }: PortfolioProps) => {
         company: "Twigfarm",
         companyUrl: "https://www.twigfarm.net/",
       },
+      {
+        name: "포트폴리오",
+        category: "web-development",
+        techs: ["Next.js", "ReactJS", "Typescript", "Tailwind CSS"],
+        image: "/images/portfolio.png",
+        company: "Side Project",
+      },
     ];
   }, []);
 
@@ -136,19 +143,17 @@ const Portfolio = ({ className }: PortfolioProps) => {
                   </div>
                   <div className="flex gap-[3px] flex-wrap ">
                     {techs.map((tech, i) => {
-                      const colorIndex = i % 3;
+                      const colorIndex = i % 4;
 
                       return (
                         <Tag
                           text={tech}
                           key={i}
                           color={
-                            (colorIndex == 0 && "#EEF5FF") ||
-                            // (colorIndex === 1 && "#F0DBAF") ||
-                            (colorIndex === 2 && "#86B6F6") ||
-                            // (colorIndex === 3 && "#7ED7C1") ||
-                            // (colorIndex === 4 && "#FFE6E6") ||
-                            (colorIndex === 1 && "#B4D4FF")
+                            (colorIndex == 0 && "#B5C0D0") ||
+                            (colorIndex === 1 && "#CCD3CA") ||
+                            (colorIndex === 2 && "#F5E8DD") ||
+                            (colorIndex === 3 && "#EED3D9")
                           }
                         />
                       );
