@@ -135,7 +135,12 @@ const Portfolio = ({ className }: PortfolioProps) => {
                   <div className="flex flex-col gap-[3px]">
                     <h3 className={`${cx("project-title")}`}>
                       {name}{" "}
-                      <a className={`${cx("project-company")}`} href={companyUrl || ""} target="_blank" rel="noreferrer">
+                      <a
+                        className={`${cx("project-company")} ${companyUrl ? "" : "pointer-events-none"}`}
+                        href={companyUrl || ""}
+                        target="_blank"
+                        rel="noreferrer"
+                      >
                         {company}
                       </a>
                     </h3>
