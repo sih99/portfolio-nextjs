@@ -5,6 +5,7 @@ import classNames from "classnames/bind";
 import styles from "./index.module.scss";
 import { Tag } from "@/components/atoms";
 import { COLOR_PALETTES } from "@/constants";
+import { GlobeOutline, LogoGithub, DocumentTextOutline } from "react-ionicons";
 
 const cx = classNames.bind(styles);
 
@@ -15,6 +16,9 @@ type Item = {
   image: string;
   company: string;
   companyUrl?: string;
+  webUrl?: string;
+  github?: string;
+  docUrl?: string;
 };
 
 export type PortfolioProps = {
@@ -33,6 +37,9 @@ const Portfolio = ({ className }: PortfolioProps) => {
         image: "/images/letrworks.png",
         company: "Twigfarm",
         companyUrl: "https://www.twigfarm.net/",
+        webUrl: "https://www.letr.ai/",
+        github: "https://github.com/twigfarm/letrworks-web",
+        docUrl: "https://sih99.notion.site/LETR-Works-d9e00f95ea7741dda3d41bed9fd6d492?pvs=4",
       },
       {
         name: "지콘스튜디오",
@@ -41,6 +48,8 @@ const Portfolio = ({ className }: PortfolioProps) => {
         image: "/images/gconstudio.png",
         company: "Twigfarm",
         companyUrl: "https://www.twigfarm.net/",
+        github: "https://github.com/twigfarm/gcon-web-go",
+        docUrl: "https://sih99.notion.site/87866528d8b340e7ab1f91169daa6f9b?pvs=4",
       },
       {
         name: "포트폴리오",
@@ -48,6 +57,7 @@ const Portfolio = ({ className }: PortfolioProps) => {
         techs: ["Next.js", "ReactJS", "Typescript", "Tailwind CSS"],
         image: "/images/portfolio.png",
         company: "Side Project",
+        github: "https://github.com/sih99/portfolio-nextjs",
       },
     ];
   }, []);
@@ -118,15 +128,30 @@ const Portfolio = ({ className }: PortfolioProps) => {
         </ul>
         <ul className={`${cx("project-list")}`}>
           {items.map((item, i) => {
-            const { name, category, company, techs, image, companyUrl } = item;
+            const { name, category, company, techs, image, companyUrl, webUrl, github, docUrl } = item;
             return (
               <li className={`${cx("project-item")}`} key={i}>
-                <a href="#">
-                  <figure className={`${cx("project-img")}`}>
-                    <div className={`${cx("project-item-icon-box")}`}>{/* <ion-icon name="eye-outline"></ion-icon> */}</div>
-                    <img src={image} alt={name} />
-                  </figure>
-                </a>
+                <figure className={`${cx("project-img")}`}>
+                  <div className={`${cx("project-item-icon-box")} flex gap-[8px] items-center`}>
+                    {webUrl && (
+                      <a href={webUrl || ""} className={`text-[var(--white-1)] hover:text-[var(--silver)]`} target="_blank" rel="noreferrer">
+                        <GlobeOutline width={"24px"} height={"24px"} color={"currentcolor"} />
+                      </a>
+                    )}
+                    {github && (
+                      <a href={github || ""} className={`text-[var(--white-1)] hover:text-[var(--silver)]`} target="_blank" rel="noreferrer">
+                        <LogoGithub width={"24px"} height={"24px"} color={"currentcolor"} />
+                      </a>
+                    )}
+                    {docUrl && (
+                      <a href={docUrl || ""} className={`text-[var(--white-1)] hover:text-[var(--silver)]`} target="_blank" rel="noreferrer">
+                        <DocumentTextOutline width={"24px"} height={"24px"} color={"currentcolor"} />
+                      </a>
+                    )}
+                    {/* <ion-icon name="eye-outline"></ion-icon> */}
+                  </div>
+                  <img src={image} alt={name} />
+                </figure>
 
                 <div className="flex flex-col ml-[10px] gap-[6px]">
                   <div className="flex flex-col gap-[3px]">
